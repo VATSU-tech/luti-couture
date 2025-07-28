@@ -1,0 +1,467 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("normalize.css");
+
+:root {
+  --couleur: rgb(0, 4, 255);
+  --text: rgb(0, 17, 255);
+  --textP: black;
+  --background: rgb(255, 255, 255);
+  --shadow: 20px;
+  --border: 0.1px;
+  --textWeight: 600;
+}
+p {
+  color: var(--textP);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+  color: var(--text);
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body { 
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 7px;
+}
+
+#header {
+  height: 100vh;
+}
+.header {
+  background-color: linear-gradient(to bottom, #000, #0009);
+}
+video{
+    background-color: #000;
+}
+
+#video-background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#header {
+  z-index: 1;
+  position: relative;
+  padding-top: 20px;
+}
+/* Cacher le bouton menu par défaut */
+#menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style nav et liens */
+#header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 91%;
+  padding: 5px 2%;
+  margin: 2.5% auto;
+  background-color: var(--background);
+  border-radius: 25px;
+  border: var(--border) solid var(--couleur);
+  box-shadow: 0 0 var(--shadow) var(--couleur);
+}
+
+/* Liens en ligne */
+#header-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+}
+
+#header-link a ,#header-link span{
+  user-select: none;
+  margin-right: 9%;
+  font-weight: bold;
+}
+.visite{
+  user-select: none;
+  cursor: pointer;
+  border-bottom: var(--border) dotted var(--couleur);
+  /* padding-bottom: 3px; */
+}
+
+#header-link a:hover ,#header-link span:hover{
+  user-select: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--couleur);
+  padding-bottom: 3px;
+  transform: scale(1.2);
+}
+
+/* -------- Responsive -------- */
+
+/* Quand la largeur max est 768px ou moins */
+@media screen and (max-width: 800px) {
+  #menu-toggle {
+    display: block; /* Affiche le bouton menu hamburger */
+  }
+  .visite{
+  user-select: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--background);
+  /* padding-bottom: 3px; */
+}
+
+  /* Cache la nav par défaut */
+  #header-link {
+    z-index: 100000;
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 10px;
+    background-color: var(--couleur);
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    right: 5%;
+    top: 60px;
+    padding: 10px;
+  }
+
+  /* Affiche la nav quand elle a la classe active */
+  #header-link.active {
+    display: flex;
+  }
+
+  /* Liens en colonne */
+  #header-link a ,#header-link span{
+    margin: 10px 0;
+    color: white;
+  }
+
+  #header-nav {
+    position: relative; /* pour le positionnement absolu du menu */
+  }
+}
+
+#headerMain {
+  margin-top: 250px;
+  gap: 20px;
+}
+
+#headerMain h1 {
+  margin-bottom: 5%;
+  font-size: 5em;
+}
+
+#headerMain a , #mainCarouselGalerie a{
+  background-color: var(--couleur);
+  color: var(--background);
+  padding: 5px;
+  margin: 50px;
+  border-radius: 10px;
+}
+#lien:hover, #mainCarouselGalerie a:hover {
+  padding: 7px;
+  font-size: 1.1em;
+  color: var(--couleur);
+  background-color: var(--background);
+  box-shadow: 0 0 30px var(--couleur);
+}
+
+a:hover,
+#headerMain a:hover,
+#contact a > i:hover,#mainCarouselGalerie a:hover {
+  transform: scale(2);
+}
+
+/* lien header nav--------------------------------------------------------------- */
+
+#contact nav {
+  background: transparent;
+}
+
+#contact i {
+  margin: 8%;
+  padding: 1%;
+  font-size: 2.5em;
+  border-radius: 25%;
+  color: var(--text);
+  height: 50px;
+}
+
+.contact i {
+  color: white;
+  text-shadow: 0 0 10px #000;
+  font-size: 4vh;
+  border-radius: 25%;
+  padding: 3px;
+  /* border:.9px solid var(--gris2);  */
+  transition: 0.5s;
+}
+
+.contact i:hover {
+  font-size: 3vh;
+  color: var(--text);
+  transform: scale(2);
+  /* background: white; */
+}
+
+.contact {
+  margin: 3%;
+  min-height: 470px;
+  width: 40px;
+  padding: 2.5% 0.9% 0 0.9%;
+  line-height: 10vh;
+  font-size: 25px;
+  float: left;
+}
+.mainContact {
+  border-top: var(--border) dotted var(--couleur);
+}
+
+nav.contact a::after {
+  content: attr(data-icon);
+  position: absolute;
+  left: -10%;
+  top: 15%;
+  font-size: 1em;
+  letter-spacing: -50px;
+  text-shadow: 0 0 10px var(--text);
+  color: white;
+  transition: 1s ;
+}
+
+nav.contact a:hover::after {
+  left: 10%;
+  bottom: 10%;
+  letter-spacing: 5px;
+  transition: 1s;
+}
+main{
+  background-color: transparent;
+  /* overflow-y: hidden; */
+}
+.main{
+  padding: 40px 0;
+  margin-bottom: 20px;
+  z-index: 1;
+  border-radius: 15px;
+  position: relative;
+  background-color: var(--background);
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.carousel {
+  overflow-y: hidden;
+  display: flex;
+  gap: 15px;
+  transition: transform 0.3s ease-in-out;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+/* #mainCarouselGalerie a {
+  background-color: var(--couleur);
+  color: var(--background);
+  padding: 5px;
+  margin: 50px;
+  border-radius: 10px;
+} */
+
+.card {
+  background: var(--background);
+  border-radius: 12px;
+  min-height: 400px;
+  padding: 10px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 250px;
+  border-radius: 16px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  background: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 1px;
+  height: 35px;
+  width: 35px;
+  top: 45%;
+  box-shadow: 0 0 6px var(--couleur);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+#prevT {
+  left: 0;
+}
+
+#nextT {
+  right: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  z-index: 50;
+  align-items: center;
+}
+
+footer span {
+  font-size: 1em;
+  color: var(--textP);
+}
+
+footer a {
+  text-decoration: none;
+  right: 2px;
+  position: fixed;
+  color: black;
+  font-size: 1em;
+}
+#mainBlog {
+  margin: 30px 0;
+  align-items: center;
+}
+.blogCard,
+.apropos {
+  max-width: 800px;
+  display: inline-block;
+  padding: 15px 5px 5px 5px;
+  min-width: 200px;
+  border-radius: 15px 5px 15px;
+  /* background-color: transparent; */
+  background-color: var(--background);
+  
+  box-shadow: 0 0 10px black;
+}
+.blogCard img {
+  min-width: 250px;
+  max-width: 60%;
+  border-radius: 15px;
+  margin: 2% 0;
+}
+.blogSpan {
+  width: 100%;
+  border-top: var(--border) dotted var(--couleur);
+  border-bottom: var(--border) dotted var(--couleur);
+  display: flex;
+  padding: 1%;
+  justify-content: space-around;
+}
+.blogSpan div a {
+  padding: 5px 0;
+  vertical-align: top;
+  width: 33%;
+}
+.blogSpan div {
+  height: 50%;
+}
+.blogLink div a,
+.blogSpan div a {
+  text-shadow: 0 0 25px var(--text);
+  font-weight: var(--textWeight);
+  color: black;
+}
+.blogLink div a:hover,
+.blogSpan div a:hover {
+  text-shadow: 0 0 25px black;
+  color: var(--text);
+  transform: scale(2);
+  font-size: 1.1em;
+}
+.blogCard span {
+  border-bottom: var(--border) dotted var(--couleur);
+  padding-bottom: 10px;
+}
+input[type=checkbox]{
+    display: none;
+}
+label{
+    user-select: none;
+    font-weight: var(--textWeight);
+    cursor: pointer;
+    color: var(--textP);
+    transition: color .2s;
+
+}
+
+input[type = checkbox]:checked + label{ 
+    transform: scale(1.2);
+    color: var(--text);
+}
+#lutiIcon {
+  background-color: aliceblue;
+}
+
+.bulle{
+    position: absolute;
+    border-radius: 300px;
+    background-color: var(--couleur);
+    z-index: -100; 
+    /* opacity: .5;  */
+    animation: anim 20s forwards;
+    /* filter: hue-rotate(0deg); */
+}
+
+@keyframes anim{
+    to{
+        top: -250px;
+        left: var(--left); 
+        /* filter: hue-rotate(720deg); */
+    }
+}
+@media screen and (max-width: 656px) {
+  #headerMain h1 { 
+  font-size: 4em;
+}
+}
+
+@media screen and (max-width: 550px) {
+  #headerMain h1 { 
+  font-size: 3em;
+}
+}
+@media screen and (max-width: 425px) {
+  #headerMain h1 { 
+  font-size: 2em;
+} }

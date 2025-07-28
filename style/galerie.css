@@ -1,0 +1,134 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0 1%;
+  background-color: #f4f4f4;
+}
+main {
+  padding: 3%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  transition: filter 0.3s ease;
+  z-index: 1;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  border: 1px solid var(--couleur);
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  transform: translateY(0);
+}
+
+/* Détail en plein écran */
+.detail-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.detail-content {
+  background: white;
+  border-radius: 10px; 
+  padding: 20px;
+  display: flex;
+  /* display: inline-block; */
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ;
+}
+
+.detail-content img {
+  max-height: 500px;
+  min-height: 200px;
+  border-radius: 10px;
+}
+
+.detail-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.detail-text h2 {
+  margin-top: 0;
+}
+
+.close-btn {
+  margin-top: 20px;
+  background: var(--couleur);
+  font-weight: 600;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+    margin-left: -200%;
+    transform: scale(.0010);
+  }
+  50%{
+    opacity: .8;
+    margin-left:0;
+  }
+  70%{
+    opacity: 1;
+    transform: scale(1.11);
+
+  }
+}
+@media screen and (max-width: 800px) {
+  .detail-content img {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 537px){
+  .detail-content img {
+    height: 300px;
+  }
+}

@@ -1,0 +1,22 @@
+ 
+.apropos h2{
+    padding-bottom: 20px;
+    border-bottom: var(--border) dotted var(--couleur);
+}
+.apropos img{
+    border-radius: 15px;
+    width: 20%;
+    min-width: 300px;
+    float: right;
+        
+}
+.aproposDiv{
+    margin-bottom: 30px;
+} 
+iframe{
+    background-color: black;
+    width: 100%;
+    height: 70vh;
+}.aproposDiv p{
+    color: var(--textP);
+}

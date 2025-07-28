@@ -1,0 +1,20 @@
+
+.temoignageCard{
+    width: 310px;
+    margin: 1%;
+}
+.temoignageCard img{ 
+    width:20%;
+    min-width: 150px;
+    padding-bottom: 1px;
+    border-radius:50%;
+} 
+.temoignageCard h2{
+    margin: 10px 0 0 0;
+}
+.identite{
+    border-top:var(--border) dotted var(--couleur);
+    border-bottom:var(--border) dotted var(--couleur);
+    padding-bottom: 10px; 
+    margin-bottom: 10px;
+}

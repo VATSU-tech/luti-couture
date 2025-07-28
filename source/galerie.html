@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style/galerie.css">
+    <link rel="shortcut icon" href="/images/LUTTI Fashion logo.png" type="image/x-icon">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="/app.js" defer></script>
+    <script src="/js/galerie.js" defer></script>
+    <title>Galerie</title>
+</head>
+
+<body>
+    <header>  
+  <div class="header"> 
+    <div id="header-nav">
+      <img src="/images/LUTTI Fashion logo.png" alt="logo" width="50">
+
+      <!-- Bouton hamburger -->
+      <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+
+      <nav id="header-link">
+        <a href="/index.html">Acceuille</a>
+        <a href="apropos.html">Apropos</a>
+        <a href="contact.html">Contact</a>
+        <span class="visite">Galerie</span>
+        <a href="temoignage.html">Temoignages</a>
+      </nav>
+    </div>
+  </div>
+</header>
+        <main>
+            <div class="gallery" id="gallery">
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0006.jpg', 'Robe avec avec dessin', 'une robe avec des dessin pour metre en valeur le pagne lore lorem lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?')">
+                    <img src="/images/IMG-20250706-WA0006.jpg" alt="Image 1">
+                    <div class="overlay">Robe avec dessin</div>
+                </div>
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0007.jpg', 'Robe simple', 'une robe sans trop de complication qui est pourtant jolie Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?')">
+                    <img id="ph" src="/images/IMG-20250706-WA0007.jpg" alt="Image 2">
+                    <div class="overlay">robe simple</div>
+                </div>
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0014.jpg', 'Blouse et jupe simple', 'blouse simple avec une jupe pour ceux qui aimen la simplicite ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?')">
+                    <img src="/images/IMG-20250706-WA0014.jpg" alt="Image 1">
+                    <div class="overlay">blouse et jupe simple</div>
+                </div>
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0009.jpg', 'Femme africaine', 'un pagne paint des couleurs de notre mere afrique  ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?')">
+                    <img src="/images/IMG-20250706-WA0009.jpg" alt="Image 2">
+                    <div class="overlay">femme africaine</div>
+                </div>
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0010.jpg', 'Robe ', 'Robe qui vous laisse respirer  ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?')">
+                    <img src="/images/IMG-20250706-WA0010.jpg" alt="Image 1">
+                    <div class="overlay">robe qui laisse respirer</div>
+                </div>
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0011.jpg', 'Luti Fashion', ' ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat? 2.')">
+                    <img src="/images/IMG-20250706-WA0011.jpg" alt="Image 2">
+                    <div class="overlay">robe taille</div>
+                </div>
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0012.jpg', 'Luti Fashion', ' ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat? 1.')">
+                    <img src="/images/IMG-20250706-WA0012.jpg" alt="Image 1">
+                    <div class="overlay">pour les petites promenades</div>
+                </div>
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0013.jpg', 'Luti Fashion', ' ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat? 2.')">
+                    <img id="ph" src="/images/IMG-20250706-WA0013.jpg" alt="Image 2">
+                    <div class="overlay">jupe pagne</div>
+                </div> 
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0014.jpg', 'Luti Fashion', ' ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat? 2.')">
+                    <img id="ph" src="/images/IMG-20250706-WA0014.jpg" alt="Image 2">
+                    <div class="overlay">blouse et jupe simple</div>
+                </div> 
+                <div class="gallery-item"
+                    onclick="showDetail('/images/IMG-20250706-WA0015.jpg', 'Luti Fashion', ' ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel animi tenetur eligendi voluptas nostrum mollitia harum, perferendis explicabo aspernatur et deserunt in rem possimus perspiciatis officia. Sequi, beatae. Placeat? 2.')">
+                    <img id="ph" src="/images/IMG-20250706-WA0015.jpg" alt="Image 2">
+                    <div class="overlay">robe simple</div>
+                </div> 
+
+                <!-- Ajoute d'autres images ici --> 
+            </div>
+
+            <!-- Fenêtre de détails -->
+            <div class="detail-view" id="detailView">
+                <div class="detail-content">
+                    <img id="detailImg" src="" alt="Image détaillée">
+                    <div class="detail-text">
+                        <h2 id="detailTitle">Titre</h2>
+                        <p id="detailDesc">Description complète</p>
+                        <button class="close-btn" onclick="closeDetail()">Fermer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tu peux ajouter autant d'images que tu veux ici -->
+            </div>
+
+            <!-- Section détails -->
+            <!-- <div class="details" id="details">
+                <img id="detail-img" src="" alt="">
+                <div>
+                    <h2 id="detail-title"></h2>
+                    <p id="detail-text"></p>
+                    <button class="close-btn" onclick="hideDetails()">Fermer</button>
+                </div>
+            </div> -->
+        </main>
+        <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const headerLink = document.getElementById('header-link');
+
+  menuToggle.addEventListener('click', () => {
+    headerLink.classList.toggle('active');
+  });
+</script>
+
+</body>
+
+</html>

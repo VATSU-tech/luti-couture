@@ -1,0 +1,142 @@
+
+form {
+  width: 80%;
+  margin: 0 10%;
+}
+
+h2 {
+  text-align: center;
+  color: var(--text);
+} 
+main{
+  overflow-y: hidden; 
+}
+body{
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.form-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: var(--border) dotted var(--couleur);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+legend {
+    margin-left: -30%;
+  font-weight: bold;
+  color: var(--text);
+  font-size: 18px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--couleur);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: var(--couleur);
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--background);
+  box-shadow: 0 0 20px var(--couleur);
+  color: var(--text);
+}
+
+textarea::placeholder {
+  resize: vertical;
+  font-size: 2em;
+}
+textarea {
+  resize: vertical;
+  resize: none;
+}
+/* .menu-icon{
+    position: absolute;
+    font-size: 30px;
+    left: 0;
+    visibility: hidden;
+} 
+@media screen and (max-width:900px) {
+    #header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #header h1{
+        position: absolute;
+        right: 50px;
+    }
+    #header nav {
+        /* position: fixed;  
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #5f5f5fef;
+        transition: left 0.3s;
+        z-index: 1000;
+        display: flex;
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+    #header nav ul {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        font-size: 22px;
+        margin: 0;
+        padding: 0 0 0 30px;
+    }
+    .menu-icon {
+        visibility: visible;
+        z-index: 1100;
+        cursor: pointer;
+        top: 20px;
+        left: 20px;
+        /* position: fixed; 
+        background: #222;
+        color: #fff;
+        border-radius: 5px;
+        padding: 8px 12px;
+    } 
+    nav.active {
+        left: 0;
+    }
+} */
