@@ -24,8 +24,8 @@ main {
   transition: transform 0.3s;
 }
 
-.gallery-item:hover {
-  transform: scale(1.02);
+.gallery-item img:hover {
+  transform: scale(1.1);
 }
 
 .gallery-item img {
