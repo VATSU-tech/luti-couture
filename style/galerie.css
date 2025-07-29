@@ -21,7 +21,6 @@ main {
   overflow: hidden;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid var(--couleur);
   transition: transform 0.3s;
 }
 
