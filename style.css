@@ -3,8 +3,8 @@
 @import url("normalize.css");
 
 :root {
-  --couleur: red;
-  --text: red;
+  --couleur: rgb(200, 0, 0);
+  --text: rgb(200, 0, 0);
   --textP: black;
   --background: rgb(255, 255, 255);
   --shadow: 20px;
@@ -25,6 +25,9 @@ p {
   text-decoration: none;
   scroll-behavior: smooth;
 }
+html{
+  background-color: white;
+}
 
 body { 
   height: 100%;
@@ -36,10 +39,7 @@ body {
 
 #header {
   height: 100vh;
-}
-.header {
-  background-color: linear-gradient(to bottom, #000, #0009);
-}
+} 
 video{
     background-color: #000;
 }
@@ -85,17 +85,22 @@ video{
 /* Liens en ligne */
 #header-link {
   display: flex;
+    z-index: 100;
   justify-content: flex-end;
   align-items: center;
   width: 90%;
 }
 
 #header-link a ,#header-link span{
+  -webkit-user-select : none;
   user-select: none;
+  border-width: 0%;
   margin-right: 9%;
   font-weight: bold;
+  /* transition: 1s; */
 }
 .visite{
+  -webkit-user-select : none;
   user-select: none;
   cursor: pointer;
   border-bottom: var(--border) dotted var(--couleur);
@@ -103,9 +108,11 @@ video{
 }
 
 #header-link a:hover ,#header-link span:hover{
+  -webkit-user-select : none;
   user-select: none;
   cursor: pointer;
   border-bottom: 1px solid var(--couleur);
+  /* border-width: 100%; */
   padding-bottom: 3px;
   transform: scale(1.2);
 }
@@ -114,11 +121,15 @@ video{
 
 /* Quand la largeur max est 768px ou moins */
 @media screen and (max-width: 800px) {
+  body{
+    scrollbar-color: var(--couleur) var(--background);
+  }
   #menu-toggle {
     display: block; /* Affiche le bouton menu hamburger */
   }
   .visite{
-  user-select: none;
+  -webkit-user-select : none;
+    user-select: none;
   cursor: pointer;
   border-bottom: 1px solid var(--background);
   /* padding-bottom: 3px; */
@@ -126,7 +137,6 @@ video{
 
   /* Cache la nav par défaut */
   #header-link {
-    z-index: 100000;
     display: none;
     flex-direction: column;
     width: 80%;
@@ -168,9 +178,9 @@ video{
 #headerMain a , #mainCarouselGalerie a{
   background-color: var(--couleur);
   color: var(--background);
-  padding: 5px;
+  padding: 8px;
   margin: 50px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 #lien:hover, #mainCarouselGalerie a:hover {
   padding: 7px;
@@ -249,8 +259,8 @@ nav.contact a:hover::after {
   letter-spacing: 5px;
   transition: 1s;
 }
-main{
-  background-color: transparent;
+main{ 
+  overflow: hidden;
   /* overflow-y: hidden; */
 }
 .main{
@@ -292,11 +302,9 @@ h2 {
 
 .card {
   background: var(--background);
-  border-radius: 12px;
-  min-height: 400px;
+  border-radius: 12px; 
   padding: 10px;
-  margin: 20px 0;
-  text-align: center;
+  margin: 10px 0; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -364,7 +372,8 @@ footer a {
 }
 .blogCard,
 .apropos {
-  max-width: 800px;
+  z-index: -10;
+  max-width: 800px; 
   display: inline-block;
   padding: 15px 5px 5px 5px;
   min-width: 200px;
@@ -417,7 +426,9 @@ input[type=checkbox]{
     display: none;
 }
 label{
-    user-select: none;
+  -webkit-user-select : none;
+  -webkit-user-select : none;  
+  user-select: none;
     font-weight: var(--textWeight);
     cursor: pointer;
     color: var(--textP);
@@ -441,6 +452,10 @@ input[type = checkbox]:checked + label{
     /* opacity: .5;  */
     animation: anim 20s forwards;
     /* filter: hue-rotate(0deg); */
+}
+#divBulles {
+  position: relative; 
+
 }
 
 @keyframes anim{

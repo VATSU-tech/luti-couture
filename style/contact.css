@@ -12,10 +12,12 @@ main{
   overflow-y: hidden; 
 }
 body{
-  max-height: 100vh;
   overflow: hidden;
 }
-
+#divBulle{
+  height: 100vh;
+  position:relative;
+}
 .form-container {
   background-color: white;
   padding: 30px;

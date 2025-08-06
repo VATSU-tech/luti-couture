@@ -72,4 +72,18 @@ const prodBulles = () => {
     },13500)
 };
 
-setInterval(prodBulles, 100); 
+setInterval(prodBulles, 500); 
+//------------------------------------------------------------------
+
+ const mode = document.getElementById('mode')
+ var etatMode = true;
+ 
+ mode.addEventListener('click', ()=> {
+   etatMode = !etatMode; 
+   var backgroundColor = etatMode ? "white" : "gray";
+   localStorage.setItem("theme" , backgroundColor);
+   var themeColor = localStorage.getItem("theme");
+   console.log(themeColor);
+   
+  document.documentElement.style.setProperty("--background",themeColor);
+ })

@@ -1,5 +1,4 @@
-const btnClose = document.getElementsByClassName('close-btn')
-console.log(btnClose);
+const btnClose = document.getElementsByClassName('close-btn') 
 
     function showDetail(src, title, desc) {
       document.getElementById("detailImg").src = src;
@@ -14,7 +13,7 @@ console.log(btnClose);
       document.getElementById("gallery").style.filter = "none";
     }
 const compteur = document.querySelector('h2');
-const main = document.querySelector('main')
+const main = document.getElementById('divBulle')
 let counter=0
 const prodBulles = () => {
     const bulle = document.createElement("span");
@@ -31,13 +30,6 @@ const prodBulles = () => {
     const plusMinus = Math.random() > 0.5 ? 1 : -1;
     bulle.style.setProperty("--left", Math.random() * 200 * plusMinus + "%");
     
-    bulle.addEventListener('mouseover', () => { 
-        bulle.addEventListener('click', () => {
-            counter++
-            compteur.textContent = counter;
-            bulle.remove();
-        })
-    })
     
     setTimeout(() => {
         bulle.remove()

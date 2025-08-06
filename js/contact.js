@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     alert('Message envoyer !')
   })
 const compteur = document.querySelector('h2');
-const main = document.querySelector('main')
+const main = document.getElementById('divBulle')
 let counter=0
 const prodBulles = () => {
     const bulle = document.createElement("span");
@@ -40,7 +40,7 @@ const prodBulles = () => {
     
     setTimeout(() => {
         bulle.remove()
-    },9000)
+    },19000)
 };
 
 setInterval(prodBulles, 100);

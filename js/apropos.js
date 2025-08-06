@@ -1,5 +1,5 @@
 const compteur = document.querySelector('h2');
-const main = document.querySelector('main')
+const main = document.getElementById('divBulle')
 let counter=0
 const prodBulles = () => {
     const bulle = document.createElement("span");
@@ -15,18 +15,11 @@ const prodBulles = () => {
 
     const plusMinus = Math.random() > 0.5 ? 1 : -1;
     bulle.style.setProperty("--left", Math.random() * 200 * plusMinus + "%");
-    
-    bulle.addEventListener('mouseover', () => { 
-        bulle.addEventListener('click', () => {
-            counter++
-            compteur.textContent = counter;
-            bulle.remove();
-        })
-    })
+     
     
     setTimeout(() => {
         bulle.remove()
-    },9000)
+    },19000)
 };
 
 setInterval(prodBulles, 100);
