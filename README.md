@@ -2,11 +2,11 @@
 
 ## Idenfite de l'etudiant
 **NOM**
--KATSIVA MALAMBO
+- KATSIVA MALAMBO
 **PSOMOTION**
 - L1 SCIENCE INFORMATIQUES
 **MATRICULE**
--4643
+- 4643
 
 ## Titre et description du site
 **Titre :** LUTI FASHION  
