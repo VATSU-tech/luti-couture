@@ -10,6 +10,12 @@
     float: right;
         
 }
+main{
+    overflow-y: hidden;
+}
+body{
+    overflow-x: hidden;
+}
 .apropos{ 
     margin: 10px;
 }
@@ -22,10 +28,7 @@ iframe{
     height: 70vh;
 }.aproposDiv p{
     color: var(--textP);
-}
-.header {
-    animation: aos 1s ;
-}
+} 
 @keyframes aos {
     
     to {

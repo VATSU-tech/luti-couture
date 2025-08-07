@@ -39,7 +39,7 @@ console.log(main);
 
 let counter=0
 const prodBulles = () => {
-    const bulle = document.createElement("img");
+    var bulle = document.createElement("img");
     bulle.src = "/images/LUTTI Fashion logo.png"
     bulle.classList.add("bulle");
     main.appendChild(bulle);
@@ -58,6 +58,7 @@ const prodBulles = () => {
     // const plusMinus = main.clientWidth;
     // bulle.style.filter = "blur(20px)"
     bulle.style.setProperty("--left", Math.random() * 200 * plusMinus + "%");
+    bulle.style.setAttribute("--couleurLogo")
     
     bulle.addEventListener('mouseover', () => { 
         bulle.addEventListener('click', () => {
@@ -69,21 +70,48 @@ const prodBulles = () => {
     
     setTimeout(() => {
         bulle.remove()
-    },13500)
+    },19500)
 };
 
 setInterval(prodBulles, 500); 
-//------------------------------------------------------------------
 
- const mode = document.getElementById('mode')
- var etatMode = true;
- 
- mode.addEventListener('click', ()=> {
-   etatMode = !etatMode; 
-   var backgroundColor = etatMode ? "white" : "gray";
-   localStorage.setItem("theme" , backgroundColor);
-   var themeColor = localStorage.getItem("theme");
-   console.log(themeColor);
-   
-  document.documentElement.style.setProperty("--background",themeColor);
- })
+//------------------------------------------------------------------
+const btnTheme = document.getElementById("theme");
+
+const changerTheme = () => {
+    const themeAppliquer = document.documentElement.getAttribute("data-theme");
+    const nouveauTheme = themeAppliquer === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("dark-theme", nouveauTheme);
+    localStorage.setItem("theme", nouveauTheme);
+};
+
+btnTheme.addEventListener("click", changerTheme);
+
+btnTheme.addEventListener("click", () => {
+    const themeSauvegarder = localStorage.getItem("theme") || "light";
+
+    if (themeSauvegarder === "dark") {
+        document.getElementById("lune").classList.add("themeActive");
+        bulle.style.background = 'blue'
+        document.getElementById("soleil").classList.remove("themeActive");
+    } else {
+        document.getElementById("soleil").classList.add("themeActive");
+        document.getElementById("lune").classList.remove("themeActive");
+    }
+
+    document.documentElement.setAttribute("data-theme", themeSauvegarder);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    const themeSauvegarder = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", themeSauvegarder);
+
+    if (themeSauvegarder === "dark") {
+        document.getElementById("lune").classList.add("themeActive"); 
+        document.getElementById("soleil").classList.remove("themeActive");
+    } else {
+        document.getElementById("soleil").classList.add("themeActive");
+        document.getElementById("lune").classList.remove("themeActive");
+    }
+});

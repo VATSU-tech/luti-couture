@@ -1,8 +1,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
-  padding: 0 1%;
-  background-color: #f4f4f4;
+  padding: 0 1%; 
 }
 main {
   padding: 3%;
@@ -22,18 +21,20 @@ main {
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s;
+  box-shadow: 0 0 10px var(--couleur);
+  border: var(--border) solid var(--couleur);
+}
+
+.gallery-item img {  
+  width: 100%;
+  border-radius: 10px;
+  transform: scale(1);
+  display: block;
+  transition: transform .5s;
 }
 
 .gallery-item img:hover {
-  transform: scale(1.1);
-  border: 1px solid var(--couleur);
-}
-
-.gallery-item img {
-  border: 1px solid var(--couleur);
-  width: 100%;
-  border-radius: 10px;
-  display: block;
+  transform: scale(1.1); 
 }
 
 .overlay {
@@ -67,7 +68,7 @@ main {
 }
 
 .detail-content {
-  background: white;
+  background: var(--background);
   border-radius: 10px; 
   padding: 20px;
   display: flex;
@@ -132,4 +133,7 @@ main {
   .detail-content img {
     height: 300px;
   }
+}
+.identite h2{
+  box-shadow: 0 0 10px var(--textP);
 }

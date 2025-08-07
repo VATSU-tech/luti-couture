@@ -8,6 +8,7 @@
     min-width: 150px;
     padding-bottom: 1px;
     border-radius:50%;
+    background-color: var(--couleurLogo);
 } 
 .temoignageCard h2{
     margin: 10px 0 0 0;

@@ -6,10 +6,15 @@
   --couleur: rgb(200, 0, 0);
   --text: rgb(200, 0, 0);
   --textP: black;
-  --background: rgb(255, 255, 255);
+  --background: white;
   --shadow: 20px;
   --border: 0.1px;
   --textWeight: 600;
+}
+[data-theme = "dark"]{
+  --background: black;
+  --textP: white;
+  --couleurLogo : rgb(200,0,0);
 }
 p {
   color: var(--textP);
@@ -24,9 +29,11 @@ p {
   color: var(--text);
   text-decoration: none;
   scroll-behavior: smooth;
+  cursor: url("/images/cursseur.png") 0 0, auto;
+  scrollbar-width: none;
 }
-html{
-  background-color: white;
+html {
+  background-color: var(--background);
 }
 
 body { 
@@ -72,11 +79,11 @@ video{
 #header-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   width: 91%;
   padding: 5px 2%;
   margin: 2.5% auto;
-  background-color: var(--background);
+  background-color: transparent;
   border-radius: 25px;
   border: var(--border) solid var(--couleur);
   box-shadow: 0 0 var(--shadow) var(--couleur);
@@ -89,6 +96,21 @@ video{
   justify-content: flex-end;
   align-items: center;
   width: 90%;
+}
+#theme{
+  background-color: var(--couleur);
+  border-radius: 15px;
+  border: var(--border) dotted var(--background);
+  padding: 5px 0px 5px 2px; 
+  min-width: 60px;  
+} 
+#lune:hover, #soleil:hover{
+  transform: scale(1.2);
+}
+.themeActive{
+  background-color: var(--background);
+  border-radius: 50%;
+  padding: 1px;
 }
 
 #header-link a ,#header-link span{
@@ -106,6 +128,10 @@ video{
   border-bottom: var(--border) dotted var(--couleur);
   /* padding-bottom: 3px; */
 }
+#header-nav img {
+  background-color:var(--couleurLogo);
+  border-radius:51%;
+}
 
 #header-link a:hover ,#header-link span:hover{
   -webkit-user-select : none;
@@ -121,9 +147,9 @@ video{
 
 /* Quand la largeur max est 768px ou moins */
 @media screen and (max-width: 800px) {
-  body{
+  /* body{
     scrollbar-color: var(--couleur) var(--background);
-  }
+  } */
   #menu-toggle {
     display: block; /* Affiche le bouton menu hamburger */
   }
@@ -177,7 +203,7 @@ video{
 
 #headerMain a , #mainCarouselGalerie a{
   background-color: var(--couleur);
-  color: var(--background);
+  color: white;
   padding: 8px;
   margin: 50px;
   border-radius: 5px;
@@ -207,13 +233,13 @@ a:hover,
   padding: 1%;
   font-size: 2.5em;
   border-radius: 25%;
-  color: var(--text);
+  color: var(--textP);
   height: 50px;
 }
 
-.contact i {
-  color: white;
+.contact i { 
   text-shadow: 0 0 10px #000;
+  color: white;
   font-size: 4vh;
   border-radius: 25%;
   padding: 3px;
@@ -381,7 +407,7 @@ footer a {
   /* background-color: transparent; */
   background-color: var(--background);
   
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px var(--couleur);
 }
 .blogCard img {
   min-width: 250px;
@@ -397,8 +423,8 @@ footer a {
   padding: 1%;
   justify-content: space-around;
 }
-.blogSpan div a {
-  padding: 5px 0;
+.blogSpan div div a {
+  padding: 5px 0; 
   vertical-align: top;
   width: 33%;
 }
@@ -409,7 +435,7 @@ footer a {
 .blogSpan div a {
   text-shadow: 0 0 25px var(--text);
   font-weight: var(--textWeight);
-  color: black;
+  color: var(--textP);
 }
 .blogLink div a:hover,
 .blogSpan div a:hover {
@@ -453,9 +479,8 @@ input[type = checkbox]:checked + label{
     animation: anim 20s forwards;
     /* filter: hue-rotate(0deg); */
 }
-#divBulles {
-  position: relative; 
-
+#divBulle {
+  position: sticky; 
 }
 
 @keyframes anim{

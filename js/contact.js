@@ -57,3 +57,43 @@ champs.forEach((champ) => {
       sonClavier.play();
     }); 
 });
+
+//------------------------------------------------------------------
+const btnTheme = document.getElementById("theme");
+
+const changerTheme = () => {
+    const themeAppliquer = document.documentElement.getAttribute("data-theme");
+    const nouveauTheme = themeAppliquer === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("dark-theme", nouveauTheme);
+    localStorage.setItem("theme", nouveauTheme);
+};
+
+btnTheme.addEventListener("click", changerTheme);
+
+btnTheme.addEventListener("click", () => {
+    const themeSauvegarder = localStorage.getItem("theme") || "light";
+
+    if (themeSauvegarder === "dark") {
+        document.getElementById("lune").classList.add("themeActive");
+        document.getElementById("soleil").classList.remove("themeActive");
+    } else {
+        document.getElementById("soleil").classList.add("themeActive");
+        document.getElementById("lune").classList.remove("themeActive");
+    }
+
+    document.documentElement.setAttribute("data-theme", themeSauvegarder);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    const themeSauvegarder = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", themeSauvegarder);
+
+    if (themeSauvegarder === "dark") {
+        document.getElementById("lune").classList.add("themeActive");
+        document.getElementById("soleil").classList.remove("themeActive");
+    } else {
+        document.getElementById("soleil").classList.add("themeActive");
+        document.getElementById("lune").classList.remove("themeActive");
+    }
+});

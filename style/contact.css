@@ -48,7 +48,7 @@ legend {
 label {
   font-weight: bold;
   margin-bottom: 5px;
-  color: black;
+  color: var(--textP);
 }
 
 input[type="text"],
@@ -60,6 +60,7 @@ textarea {
   border-radius: 5px;
   font-size: 16px;
   width: 100%;
+  background-color: var(--background);
   box-sizing: border-box;
 }
 
