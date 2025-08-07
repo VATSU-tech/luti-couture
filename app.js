@@ -1,55 +1,50 @@
-const carousel = document.getElementById('carousel'); 
-const next = document.getElementById('next');
-const prev = document.getElementById('prev'); 
-
-next.addEventListener('click', () => {
-  carousel.scrollBy({ left: 285, behavior: 'smooth' });
-});
-
-prev.addEventListener('click', () => {
-  carousel.scrollBy({ left: -285, behavior: 'smooth' });
-}); 
+const carousel = document.getElementById("carousel");
+const next = document.getElementById("next");
+const prev = document.getElementById("prev");
 const cardWidth = 285;
 
+next.addEventListener("click", () => {
+    carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
+});
+
+prev.addEventListener("click", () => {
+    carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
+});
+
 function scrollNext() {
-  const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
 
-  if (Math.ceil(carousel.scrollLeft + cardWidth) >= maxScrollLeft) {
-    // Revenir au début si on atteint la fin
-    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-  } else {
-    // Passer à la carte suivante
-    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
-  }
+    if (Math.ceil(carousel.scrollLeft + cardWidth) >= maxScrollLeft)
+        carousel.scrollTo({ left: 0, behavior: "smooth" });
+    else carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
 }
-
 
 // Démarrage de l'autoscroll toutes les 3 secondes
 setInterval(scrollNext, 3000);
 
-const menuToggle = document.getElementById('menu-toggle');
-  const headerLink = document.getElementById('header-link');
+const menuToggle = document.getElementById("menu-toggle");
+const headerLink = document.getElementById("header-link");
 
-  menuToggle.addEventListener('click', () => {
-    headerLink.classList.toggle('active');
-  });
-  const compteur = document.querySelector('h2');
-const main = document.querySelector('main');
+menuToggle.addEventListener("click", () => {
+    headerLink.classList.toggle("active");
+});
+const compteur = document.querySelector("h2");
+const main = document.querySelector("main");
 console.log(main);
 
-let counter=0
+let counter = 0;
 const prodBulles = () => {
     var bulle = document.createElement("img");
-    bulle.src = "/images/LUTTI Fashion logo.png"
+    bulle.src = "/images/LUTTI Fashion logo.png";
     bulle.classList.add("bulle");
     main.appendChild(bulle);
 
-    const size = Math.random() *  100 + 50 + "px";
+    const size = Math.random() * 100 + 50 + "px";
     bulle.style.height = size;
     bulle.style.width = size;
 
-    bulle.style.transform = "rotate("+ Math.random() * 360 + "deg)" 
-    bulle.style.background = "none"
+    bulle.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+    bulle.style.background = "none";
 
     bulle.style.top = Math.random() * 100 + 50 + "%";
     bulle.style.left = Math.random() * 50 + "%";
@@ -58,22 +53,21 @@ const prodBulles = () => {
     // const plusMinus = main.clientWidth;
     // bulle.style.filter = "blur(20px)"
     bulle.style.setProperty("--left", Math.random() * 200 * plusMinus + "%");
-    bulle.style.setAttribute("--couleurLogo")
-    
-    bulle.addEventListener('mouseover', () => { 
-        bulle.addEventListener('click', () => {
-            counter++
+
+    bulle.addEventListener("mouseover", () => {
+        bulle.addEventListener("click", () => {
+            counter++;
             compteur.textContent = counter;
             bulle.remove();
-        })
-    })
-    
+        });
+    });
+
     setTimeout(() => {
-        bulle.remove()
-    },19500)
+        bulle.remove();
+    }, 19500);
 };
 
-setInterval(prodBulles, 500); 
+setInterval(prodBulles, 500);
 
 //------------------------------------------------------------------
 const btnTheme = document.getElementById("theme");
@@ -93,7 +87,6 @@ btnTheme.addEventListener("click", () => {
 
     if (themeSauvegarder === "dark") {
         document.getElementById("lune").classList.add("themeActive");
-        bulle.style.background = 'blue'
         document.getElementById("soleil").classList.remove("themeActive");
     } else {
         document.getElementById("soleil").classList.add("themeActive");
@@ -108,7 +101,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.documentElement.setAttribute("data-theme", themeSauvegarder);
 
     if (themeSauvegarder === "dark") {
-        document.getElementById("lune").classList.add("themeActive"); 
+        document.getElementById("lune").classList.add("themeActive");
         document.getElementById("soleil").classList.remove("themeActive");
     } else {
         document.getElementById("soleil").classList.add("themeActive");

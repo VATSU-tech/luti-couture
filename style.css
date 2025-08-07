@@ -102,7 +102,7 @@ video{
   border-radius: 15px;
   border: var(--border) dotted var(--background);
   padding: 5px 0px 5px 2px; 
-  min-width: 60px;  
+  min-width: 61px;  
 } 
 #lune:hover, #soleil:hover{
   transform: scale(1.2);
@@ -146,7 +146,7 @@ video{
 /* -------- Responsive -------- */
 
 /* Quand la largeur max est 768px ou moins */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1040px) {
   /* body{
     scrollbar-color: var(--couleur) var(--background);
   } */
