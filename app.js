@@ -107,4 +107,6 @@ window.addEventListener("DOMContentLoaded", () => {
         document.getElementById("soleil").classList.add("themeActive");
         document.getElementById("lune").classList.remove("themeActive");
     }
-});
+}); 
+
+
