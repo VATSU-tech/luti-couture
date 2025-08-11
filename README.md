@@ -1,12 +1,12 @@
 # LUTI FASHION
 
 ## Idenfite de l'etudiant
-**NOM**
-- KATSIVA MALAMBO
-**PSOMOTION**
-- L1 SCIENCE INFORMATIQUES
-**MATRICULE**
-- 4643
+- **Noms**
+  - KATSUVA MALAMBO
+- **Promotion**
+  - L1 INFORMATIQUE
+- **Matricule**
+  - #4643
 
 ## Titre et description du site
 **Titre :** LUTI FASHION  
@@ -30,9 +30,9 @@ LUTI FASHION est le site pour un atelier de couture situé à Beni. Il présente
 - **Icônes :**
   - Font Awesome pour les réseaux sociaux (Facebook, WhatsApp, X, Instagram, GitHub, LinkedIn)
 - **Audio**
-  - Son au saisie sur le clavier dans la page de contact
+  - Son au saisie sur le clavier dans la page de contact `typing.mp3`
 - **Carte interactive :**
   - Google Maps intégrée sur la page À propos
 
 ## Déclaration sur l’honneur
-    Moi KATSUVA MALAMBO declare sur mon honeur que ce travail est personnel est n'avoir recue aucune aide significatif pour la realisation de celle ci.
+  Moi **KATSUVA MALAMBO** declare sur mon honeur que ce travail est personnel est que je suis capable de l'expliquer entièrement dans les grandes lignes
