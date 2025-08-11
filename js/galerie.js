@@ -16,6 +16,15 @@ const compteur = document.querySelector("h2");
 const main = document.getElementById("divBulle");
 let counter = 0;
 const prodBulles = () => {
+    //--------------------------------
+    if(headerLink.classList.contains("active")) {
+        main.style.filter = 'blur(10px)'
+        document.body.style.overflow = 'hidden'
+    } else {
+        main.style.filter = 'none'
+        document.body.style.overflow = 'auto'
+    }
+    //--------------------------------
     const bulle = document.createElement("span");
     bulle.classList.add("bulle");
     main.appendChild(bulle);

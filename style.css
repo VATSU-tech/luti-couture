@@ -1,18 +1,18 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
-@import url("normalize.css");
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
     --couleur: rgb(200, 0, 0);
     --text: rgb(200, 0, 0);
-    --textP: rgb(255, 255, 255);
-    --background: white;
+    --textP: rgb(0, 0, 0);
+    --background: rgb(233, 233, 233);
     --shadow: 20px;
     --border: 0.1px;
     --textWeight: 600;
 }
 [data-theme="dark"] {
-    --background: rgb(37, 37, 37);
+    --background: rgb(20, 20, 20);
     --textP: white;
     --couleurLogo: rgb(200, 0, 0);
 }
@@ -35,12 +35,12 @@ html {
     background-color: var(--background);
 }
 
-body {
+body { 
     cursor: url("/images/cursseur.png") 0 0, auto;
-    height: 100%;
+    height: 100%; 
     width: 100%;
     overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Nunito, Arial, Helvetica, sans-serif;
     padding-left: 7px;
 }
 
@@ -54,7 +54,7 @@ video {
 #video-background {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; 
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -74,7 +74,11 @@ video {
     border: none;
     cursor: pointer;
 }
-
+#logoText{
+    color: var(--couleur);
+    font-size: 2rem;
+    display: none;
+}
 /* Style nav et liens */
 #header-nav {
     display: flex;
@@ -153,6 +157,9 @@ video {
     /* body{
     scrollbar-color: var(--couleur) var(--background);
   } */
+   #logoText{
+    display: block;
+   }
     #menu-toggle {
         display: block; /* Affiche le bouton menu hamburger */
     }
@@ -201,8 +208,29 @@ video {
 }
 
 #headerMain h1 {
-    margin-bottom: 5%;
-    font-size: 5em;
+    /* margin-top: -1%; */
+    margin-bottom: 10%;
+    font-family:Edu VIC WA NT Hand Pre, Nunito Arial, Helvetica, sans-serif;
+    font-size: 8em;
+    animation: header 2s ease-in-out infinite forwards;
+}
+@keyframes header {
+    0%{
+        text-shadow: 0 .1rem var(--couleur); 
+    }
+    25%{
+        text-shadow:.1rem 0 var(--couleur); 
+    }
+    50%{
+        text-shadow: 0 -.1rem var(--couleur); 
+    }
+    75%{
+        text-shadow:-.1rem 0 var(--couleur); 
+    }
+    100%{
+        text-shadow: 0 .1rem var(--couleur); 
+    }
+    
 }
 
 #headerMain a,
@@ -254,19 +282,18 @@ a:hover,
     transition: 0.5s;
 }
 
-.contact i:hover {
-    font-size: 3vh;
+.contact a:hover { 
     color: var(--text);
-    transform: scale(2);
-    /* background: white; */
-}
+    transform: scale(1.1); 
+} 
 
 .contact {
+    display: grid;
     margin: 3%;
     min-height: 470px;
     width: 40px;
     padding: 2.5% 0.9% 0 0.9%;
-    line-height: 10vh;
+    line-height: 0vh;
     font-size: 25px;
     float: left;
 }
@@ -287,13 +314,15 @@ nav.contact a::after {
 }
 
 nav.contact a:hover::after {
-    left: 10%;
+    left: 30px;
     bottom: 10%;
     letter-spacing: 5px;
     transition: 1s;
+    animation: header 1s ease-in-out infinite forwards;
 }
 main {
-    overflow: hidden;
+    overflow: hidden; 
+    /* margin-left: -100px ; */
     /* overflow-y: hidden; */
 }
 .main {
@@ -485,6 +514,7 @@ input[type="checkbox"]:checked + label {
     z-index: -100;
     /* opacity: .5;  */
     animation: anim 20s forwards;
+    
     /* filter: hue-rotate(0deg); */
 }
 #divBulle {
@@ -498,18 +528,33 @@ input[type="checkbox"]:checked + label {
         /* filter: hue-rotate(720deg); */
     }
 }
-@media screen and (max-width: 656px) {
+@media screen and (max-width: 1120px) {
+    #headerMain h1 {
+        font-size: 7em;
+    }
+}
+@media screen and (max-width: 980px) {
+    #headerMain h1 {
+        font-size: 6em;
+    }
+}
+@media screen and (max-width: 850px) {
+    #headerMain h1 {
+        font-size: 5em;
+    }
+}
+@media screen and (max-width: 750px) {
     #headerMain h1 {
         font-size: 4em;
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 590px) {
     #headerMain h1 {
         font-size: 3em;
     }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 460px) {
     #headerMain h1 {
         font-size: 2em;
     }

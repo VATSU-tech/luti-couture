@@ -1,6 +1,11 @@
 const carousel = document.getElementById("carousel");
 const next = document.getElementById("next");
 const prev = document.getElementById("prev");
+const compteur = document.querySelector("h2");
+const main = document.querySelector("main"); 
+const headerNav = document.getElementById('headerContactNav');
+const videoBackground = document.getElementById('video-background'); 
+
 const cardWidth = 285;
 
 next.addEventListener("click", () => {
@@ -11,26 +16,24 @@ prev.addEventListener("click", () => {
     carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
 });
 
-function scrollNext() {
-    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-
-    if (Math.ceil(carousel.scrollLeft + cardWidth) >= maxScrollLeft)
-        carousel.scrollTo({ left: 0, behavior: "smooth" });
-    else carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
-}
-
-// Démarrage de l'autoscroll toutes les 3 secondes
-setInterval(scrollNext, 3000);
+setInterval(()=> carousel.scrollBy({ left: cardWidth, behavior: "smooth" }), 3000)
+setInterval(()=> carousel.scrollBy({ left: -cardWidth*8, behavior: "smooth" }), 30000)
 
 const menuToggle = document.getElementById("menu-toggle");
-const headerLink = document.getElementById("header-link");
+const headerLink = document.getElementById("header-link"); 
 
 menuToggle.addEventListener("click", () => {
     headerLink.classList.toggle("active");
+    if(headerLink.classList.contains("active")) {
+        headerNav.style.filter = 'blur(10px)'
+        document.body.style.overflow = 'hidden'
+        videoBackground.style.filter = 'blur(10px)'
+    } else {
+        headerNav.style.filter = 'none'
+        document.body.style.overflow = 'auto'
+        videoBackground.style.filter = 'none'
+    }
 });
-const compteur = document.querySelector("h2");
-const main = document.querySelector("main");
-console.log(main);
 
 let counter = 0;
 const prodBulles = () => {
@@ -49,9 +52,8 @@ const prodBulles = () => {
     bulle.style.top = Math.random() * 100 + 50 + "%";
     bulle.style.left = Math.random() * 50 + "%";
 
-    const plusMinus = Math.random() > 0.5 ? 1 : -1;
-    // const plusMinus = main.clientWidth;
-    // bulle.style.filter = "blur(20px)"
+    const plusMinus = Math.random() > 0.5 ? 1 : -1; 
+
     bulle.style.setProperty("--left", Math.random() * 200 * plusMinus + "%");
 
     bulle.addEventListener("mouseover", () => {
